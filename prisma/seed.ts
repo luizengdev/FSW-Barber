@@ -138,30 +138,6 @@ async function seedDatabase() {
       barbershops.push(barbershop)
     }
 
-    // Criar usuários fictícios
-    const users = []
-    for (let i = 0; i < 5; i++) {
-      const user = await prisma.user.create({
-        data: {
-          email: `user${i}@example.com`,
-          name: `User ${i}`,
-        },
-      })
-      users.push(user)
-    }
-
-    // Criar avaliações fictícias para as barbearias
-    for (let i = 0; i < 20; i++) {
-      await prisma.rating.create({
-        data: {
-          rating: Math.floor(Math.random() * 5) + 1, // Avaliação entre 1 e 5
-          userId: users[Math.floor(Math.random() * users.length)].id,
-          barbershopId:
-            barbershops[Math.floor(Math.random() * barbershops.length)].id,
-        },
-      })
-    }
-
     // Fechar a conexão com o banco de dados
     await prisma.$disconnect()
   } catch (error) {
