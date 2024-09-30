@@ -8,7 +8,7 @@ import Image from "next/image"
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
 import { signOut, useSession } from "next-auth/react"
 import { Avatar, AvatarImage } from "./ui/avatar"
-import { quickSearchOptions } from "../_constants/search-option"
+import { quickSearchOptions } from "../_constants/search"
 import SignInDialog from "./sign-in-dialog"
 
 const SidebarSheet = () => {
