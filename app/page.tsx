@@ -8,7 +8,6 @@ import BookingItem from "./_components/booking-item"
 import Search from "./_components/search"
 import Link from "next/link"
 
-// TODO: receber agendamento como propidade
 const Home = async () => {
   const barbershops = await db.barbershop.findMany({})
   const popularBarbershops = await db.barbershop.findMany({
@@ -24,7 +23,7 @@ const Home = async () => {
         <h2 className="text-xl font-bold">Olá, Luiz</h2>
         <p>Segunda-feira, 05 de agosto.</p>
 
-        {/* BUSCA */}
+        {/* BUSCA RAPIDA */}
         <div className="mt-6">
           <Search />
         </div>
